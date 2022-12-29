@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>04.gallery</title>
 </head>
 <body>
     <div id="gallerywrap">
@@ -29,6 +29,7 @@
          num--;
          if(num<=0){num=7}
          document.getElementById("gallery").src="images/img"+num +".jpg";
+         return false;
        }
     </script>
 </body>
