@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      background: pink;
+    }
+    .circle{
+        width:100px;
+        height:100px;
+        position:absolute;
+        border-radius: 50%;
+        background: yellow;
+    
+    }
+  </style>
+  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+  <script>
+    $(function(){
+      //$("css선택자").animate(속성[,시간][,가속도][,콜백함수])
+
+      function ani (){
+          $(".box").animate({left:500, top:100},5000)
+          .delay(500).animate({top:0,left:0},500)
+      }
+      $(".circle").animate({right:600, bottom:300},2000)
+      .delay(500).animate({top:0,right:0},500)
+
+      //loop구현
+      //setInterval(할일, 시간1/1000)
+      setInterval(ani,500)
+    })
+  </script>
+</head>
+
+<body>
+  <div class="box"></div>
+  <div class="circle"></div>
+</body>
+
+</html>

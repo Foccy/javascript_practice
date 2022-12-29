@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .last {
+      background: #900;
+    }
+  </style>
+  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+  <script>
+    $(function () {
+      //find 하위요소탐색, filter 조건에 맞는거 걸러냄,end 이전요소선택, eq(n) n번째 요소선택
+      $("#list").find(">li").css("border-bottom", "1px solid").filter(':last').addClass('last').end().find("li").css("background","#ccc").eq(2).css("color","blue");
+    })
+  </script>
+</head>
+
+<body>
+  <ul id="list">
+    <li>aaaaa</li>
+    <li>
+      <ul>
+        <li>bbbb</li>
+        <li>bbbb</li>
+        <li>bbbb</li>
+      </ul>
+    </li>
+    <li>ccccc</li>
+    <li>ccccc</li>
+  </ul>
+</body>
+
+</html>
