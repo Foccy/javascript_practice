@@ -30,9 +30,24 @@ for (let i=6; i>=1; i--){
 
 //--------------------------------------------
 
-let a ="*"
+let a =0;
 for(let b=1; b<=9; b++){
     for(let b=2; b<=9; b++){
         document.write("<br>");
     }
+}
+
+//-----------------------------------------------
+// 1~10까지 수에서 짝수끼리 더해서 출력하세요
+
+var k;
+var n =10;
+var sum= 0;
+
+for (k=1; k<=n ; k++) {
+    if(k%2 === 1) {
+        continue; }// 
+    console.log(k);
+    sum=sum+k; // = sum+=k ;
+    document.write("&"+sum);
 }
