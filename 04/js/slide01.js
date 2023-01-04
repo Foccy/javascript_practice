@@ -36,7 +36,10 @@ $(function () {
   function move() {
     if (current == btnIdx) return;
     let cu = visual.eq(current);
+    console.log(cu)
     let ne = visual.eq(btnIdx);
+    console.log(ne)
+
     cu.css("left", "0").stop().animate({ left: "-100%" });
     ne.css("left", "100%").stop().animate({ left: "0%" });
     current = btnIdx;
