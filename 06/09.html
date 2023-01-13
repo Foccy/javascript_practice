@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      overflow: hidden;
+    }
+
+    article {
+      position: relative;
+      width: 100%;
+      height: 900px;
+    }
+
+    .article1 {
+      background-color: red;
+    }
+
+    .article2 {
+      background-color: green;
+    }
+
+    .article3 {
+      background-color: blue;
+    }
+
+    .article4 {
+      background-color: red;
+    }
+
+    .article5 {
+      background-color: green;
+    }
+
+    .article1 h1 {
+      font-size: 200px;
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translate(0, 0%);
+      color: #fff;
+      transition: 1s;
+      opacity: 0;
+    }
+
+    .article1.on h1 {
+      opacity: 1;
+      transform: translate(0, -50%);
+    }
+
+    .left1,
+    .rignt1 {
+      font-size: 60px;
+      color: #fff;
+      font-weight: bold;
+      position: absolute;
+      transition: all 0.5s ;
+    }
+
+    .left1 {
+      left: -500px;
+      top: 20%;
+      transition-delay:0s ;
+    }
+
+    .rignt1 {
+      right: -500px;
+      bottom: 20%;
+      transition-delay:1s ;
+    }
+
+    .left1.on {
+      left: 200px;
+    }
+
+    .rignt1.on {
+      right: 200px;
+    }
+  </style>
+  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+  <!--   <script>
+    addEventListener("load", function () {
+      addEventListener("scroll", () => {
+        let wsc = parseInt(this.scrollY);
+        let arts = document.querySelectorAll('article');
+        if (wsc > arts[0].offsetTop) {
+          arts[0].classList.add("on");
+        }
+        if (wsc > arts[1].offsetTop) {
+          document.querySelector(".left1").classList.add("on");
+        }
+        if (wsc > arts[1].offsetTop) {
+          document.querySelector(".rignt1").classList.add("on");
+        }
+
+      })
+    })
+  </script> -->
+  <script>
+    $(function(){
+      $(window).scroll(function(){
+        let sct=$(this).scrollTop();
+        let arts=$('article');
+        let speed=200;
+        if(sct>=arts.eq(0).offset().top){
+          $('.article1').addClass('on');
+        }
+        if(sct>=arts.eq(1).offset().top - speed){
+          $('.left1').addClass('on');
+        }
+        if(sct>=arts.eq(1).offset().top - speed){
+          $('.rignt1').addClass('on');
+        }
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <section>
+    <article class="article1">
+      <h1>Loerm!!</h1>
+    </article>
+    <article class="article2">
+      <div class="left left1">Ipsum</div>
+      <div class="rignt rignt1">Dolor</div>
+    </article>
+    <article class="article3"></article>
+    <article class="article4"></article>
+    <article class="article5"></article>
+  </section>
+</body>
+
+</html>

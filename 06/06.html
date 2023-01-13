@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-size: 13px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    .gnb {
+      width: 200px;
+      margin: 20px auto 0;
+      text-align: center;
+      text-indent: 10px;
+    }
+
+    .gnb>li>a {
+      display: block;
+      height: 36px;
+      background: #390;
+      cursor: pointer;
+      line-height: 3em;
+      border-top: 1px dotted #fff;
+      color: #fff;
+    }
+
+    .gnb .sub li {
+      height: 36px;
+      line-height: 3em;
+      background: #cf9;
+    }
+
+    .gnb .sub li a {
+      display: block;
+      width: 100%;
+      color: #222;
+    }
+
+    .gnb .sub li:hover {
+      background: #cf0;
+    }
+
+    .sub {
+      transition: height 0.5s;
+      overflow: hidden;
+      height: 0px;
+    }
+
+    .sub.on {
+      height: 110px;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="gnb">
+    <li>
+      <a href="#">1회사소개</a>
+      <ul class="sub">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu2</a></li>
+        <li><a href="#">submenu3</a></li>
+        <li><a href="#">submenu4</a></li>
+        <li><a href="#">submenu5</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">2회사소개</a>
+      <ul class="sub">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu2</a></li>
+        <li><a href="#">submenu3</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">3회사소개</a>
+      <ul class="sub">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu2</a></li>
+        <li><a href="#">submenu3</a></li>
+        <li><a href="#">submenu4</a></li>
+        <li><a href="#">submenu5</a></li>
+        <li><a href="#">submenu6</a></li>
+        <li><a href="#">submenu7</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">4회사소개</a>
+      <ul class="sub">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu2</a></li>
+        <li><a href="#">submenu3</a></li>
+        <li><a href="#">submenu4</a></li>
+      </ul>
+    </li>
+  </ul>
+</body>
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<!-- <script src="06js.js"></script> -->
+<!-- <script src="06-1js.js"></script> -->
+<!-- vanilla javascript 를 사용한 가변높이 아코디언 -->
+<!-- <script src="06-2.js"></script> -->
+<!-- jQuery 를 사용한 가변높이 아코디언-->
+<script src="06-3.js"></script>
+
+</html>
