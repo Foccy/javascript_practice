@@ -55,20 +55,7 @@
         ctrl = $(".ctrl");
         
         list.append(copyObj)
-        
-       
-
-
-        const timer = setInterval(autoplay, 2000)
-        clearInterval(timer)
-        setInterval(autoplay, 2000)
-        ctrl.click(function(){
-          if(ctrl.text()==="stop"){
-            ctrl.text("play")
-          }
-          console.log(ctrl.text()==="stop");
-        })
-
+      
 
       function autoplay() {
         if (num == total) {
@@ -89,6 +76,8 @@
         list.stop().animate({ "margin-left": -li_width * num }, 1000);//요기의num
         return false;
       });
+
+      
       $(".prev").click(function () {
         if (num == 0) {
           num = total;//3
@@ -103,7 +92,7 @@
 </head>
 
 <body>
-  <h1>Rolling</h1>
+  <h1>Rolling</h1>ww
   <div id="frame">
     <ul id="banner">
       <li>1</li>

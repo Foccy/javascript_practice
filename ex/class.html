@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .last {
+      background: #900;
+    }
+
+    .on {
+      background: pink;
+      font-size: 2em;
+    }
+  </style>
+</head>
+
+<body>
+  <ul id="list">
+    <li>aaaaa</li>
+    <li>
+      <ul>
+        <li>bbbb</li>
+        <li>bbbb</li>
+        <li>bbbb</li>
+      </ul>
+    </li>
+    <li>ccccc</li>
+    <li>ccccc</li>
+  </ul>
+  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+  <script>
+    $('#list').find('> li').css("border-bottom","1px solid");
+    $('#list').find('> li').eq(1).addClass('last');
+    $('#list').find('> li li').eq(1).css("color","yellow").animate({"margin-left":"100%"},50000);
+    $("#list").find(">li").eq(2).mouseover(function(){
+      //할일
+      $('#list ul').addClass('on addd')
+    })
+    $("#list").find(">li").eq(2).mouseleave(function(){
+      $('#list ul').removeClass('on')
+    })
+    </script>
+</body>
+
+</html>

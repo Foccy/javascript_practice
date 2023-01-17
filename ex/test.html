@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      background: pink;
+    }
+
+    .circle {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: skyblue;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="box"></div>
+    <div class="circle"></div>
+  </div>
+  <script src='https://code.jquery.com/jquery-1.12.1.min.js'></script>
+  <script>
+      function ani() {
+        $('.circle').animate({ left: 500, bottom: 100 }, 400).animate({ left: 0, bottom: 0 }, 400)
+      }
+      
+      setInterval(ani, 1000);
+  </script>
+</body>
+
+</html>

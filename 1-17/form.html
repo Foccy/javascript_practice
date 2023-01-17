@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>from</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="http://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="keywords.js"></script>
+    <script src="ui.js"></script>
+  </head>
+  <body>
+    <div class="content">
+      <div class="main">
+        <h1>망고항공 : 항공편 예약</h1>
+        <form>
+          <div>
+            <label for="departure" class="label">탑승일</label>
+            <input type="text" id="departure" name="departure" autocomplete="off" />
+          </div>
+          <div>
+            <label for="airport" class="label">공항</label>
+            <input type="text" id="airport" name="airport" />
+          </div>
+          <div>
+            <label for="meal" class="label">기내식</label>
+            <select name="meal" id="meal">
+              <option>선택안함</option>
+              <option>비건</option>
+              <option>글루텐프리</option>
+              <option>베지테리언</option>
+              <option>육류</option>
+            </select>
+          </div>
+          <div id="bags">
+            <p class="label">수화물 수량</p>
+            <input type="radio" id="none" name="bags" checked="checked" />
+            <label for="none">0</label>
+
+            <input type="radio" id="one" name="bags" />
+            <label for="one">1</label>
+
+            <input type="radio" id="two" name="bags" />
+            <label for="two">2</label>
+          </div>
+          <div id="seatTypes">
+            <p class="label">좌석</p>
+            <input type="checkbox" id="aisle" name="aisle" /><!-- 아일 -->
+            <label for="aisle">통로</label>
+
+            <input type="checkbox" id="window" name="window" />
+            <label for="window">창가</label>
+
+            <input type="checkbox" id="exit" name="exit" />
+            <label for="exit">비상구 좌석</label>
+
+            <input type="checkbox" id="any" name="any" />
+            <label for="any">선택안함</label>
+          </div>
+          <div>
+            <button id="next">다음 단계로 진행해 주세요</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <button id="telmeLink">대화상자열기</button>
+    <div id="telme" title="전화주세요!">
+      <p title="예쁜멍멍이">멍멍멍!!!</p>
+      <img src="https://placedog.net/500" alt="d" />
+    </div>
+  </body>
+</html>
+

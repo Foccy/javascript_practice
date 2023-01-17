@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jQuery UI Datepicker - Default functionality</title>
+    <!-- 서버환경에서 http:// https:// 둘중하나 사용자서버의 프로토콜에 맞는 걸로 설정됨 -->
+    <style>
+      #ui-datepicker-div {
+        background-color: red;
+      }
+    </style>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="http://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+      $(function () {
+        $("#datepicker").datepicker();
+      });
+    </script>
+  </head>
+  <body>
+    <p>Date: <input type="text" id="datepicker" /></p>
+  </body>
+</html>

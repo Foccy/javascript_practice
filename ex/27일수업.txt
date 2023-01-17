@@ -1,0 +1,14 @@
+효과메서드
+.animate
+
+탐색메서드
+.find
+.eq
+
+CSS 
+.addClass
+.removeClass
+
+-----------------
+자바스크립트 시간제어함수
+setInterval
