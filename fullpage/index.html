@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/fullpagecss.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/fullpage.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#fullpage").fullpage({
+          menu: "#menu",
+          anchors: ["section1", "section2", "section3", "section4"],
+          sectionsColor: ["#f2f2f2", "#4BBFC3", "#7BAABE", "#000"],
+          navigation: true,
+          navigationPosition: "right",
+          navigationTooltips: ["firstSlide", "secondSlide"],
+          afterLoad: function (obj, idx) {
+            var activeMenu;
+            if (idx == 4) {
+              activeMenu = $("#fp-nav")
+                .find("li")
+                .eq(idx - 1)
+                .addClass("on");
+            }
+          },
+        });
+      });
+    </script>
+    <link rel="stylesheet" href="css/custom.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul id="menu">
+          <li data-menuanchor="section1"><a href="#section1">section1</a></li>
+          <li data-menuanchor="section2"><a href="#section2">section2</a></li>
+          <li data-menuanchor="section3"><a href="#section3">section3</a></li>
+          <li data-menuanchor="section4"><a href="#section4">section4</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="fullpage">
+      <div class="section">
+        <ul id="pin">
+          <li data-menuanchor="section1"><a href="#section1">section1</a></li>
+          <li data-menuanchor="section2"><a href="#section2">section2</a></li>
+          <li data-menuanchor="section3"><a href="#section3">section3</a></li>
+          <li data-menuanchor="section4"><a href="#section4">section4</a></li>
+        </ul>
+      </div>
+      <div class="section">
+        <div class="slide">
+          <h2>slide1</h2>
+        </div>
+        <div class="slide">
+          <h2>slide1</h2>
+        </div>
+        <div class="slide">
+          <h2>slide1</h2>
+        </div>
+      </div>
+      <div class="section">Some section</div>
+      <div class="section">Some section</div>
+    </div>
+  </body>
+</html>
