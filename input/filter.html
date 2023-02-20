@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 필터 : 배열에서 원하는 값을 추출해서 새 배열로 만듦 -->
+    <script>
+      const nums = [10, 20, 30, 40, 50, 60];
+      const num = nums.filter(function (n) {
+        return n > 20 ? true : false;
+      });
+      console.log(num);
+
+      const dogs = [
+        { name: "망고", age: 6 },
+        { name: "공주", age: 8 },
+        { name: "딴딴", age: 4 },
+      ];
+      let adult = dogs.filter((dogs, idx) => {
+        // console.log(dogs, idx);
+        if (dogs.age > 5) {
+          return true;
+        }
+      });
+      for (var i = 0; i < adult.length; i++) {
+        console.log(adult[i].name, adult[i].age);
+        document.body.innerHTML += `${adult[i].name}:${adult[i].age}`;
+      }
+    </script>
+  </body>
+</html>

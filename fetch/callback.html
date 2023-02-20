@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>callback</title>
+  </head>
+  <body>
+    <script>
+      function timer(time) {
+        setTimeout(() => {
+          document.write("1초후한다");
+          timer(1000);
+        }, time);
+      }
+      //timer(1000)
+      let myprom = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("성공");
+        }, 1000);
+      });
+      myprom.then((msg) => {
+        document.write("1초후실행:", msg);
+      });
+    </script>
+
+    <script>
+      function timer(time) {
+        return new Promise(function (resolve) {
+          setTimeout(function () {
+            resolve(time);
+          }, time);
+        });
+      }
+      timer(1000)
+        .then((time) => {
+          document.write("time" + time);
+          return timer(time + 1000);
+        })
+        .then((time) => {
+          document.write("time" + time);
+          return timer(time + 1000);
+        });
+    </script>
+
+    <script>
+      const run = async () => {
+        document.write("시작");
+        let time = await timer(1000);
+        document.write("time" + time);
+        time = await timer(1000);
+        document.write("time" + time);
+      };
+
+      run();
+      // ajax: 비동기 처리를 하는 통신방법
+      // 비동기작업시 콜백지옥 많이 생기는데, --> 콜백내애서의 순서를  정해준다
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script> 
+    let fetched=fetch('https://jsonplaceholder.typicode.co/photos') //0. fetch 네트워크 동신 --> ES6
+
+    fetched.then((response)=>{ //1. then 통신성공시,
+      let data=response.json()
+      data.then((d)=>{
+        console.log("data",d)
+      })
+    })
+    fetched.catch((reason)=>{ // 2. catch 통신 실패시,
+      console.log("실패",reason)
+    })
+    //async, await -->ES8
+  </script>
+</body>
+</html>

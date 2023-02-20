@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>안녕하세요:여성:팝업이에요</title>
+    <style>
+      .popup {
+        position: fixed;
+        left: 100px;
+        top: 100px;
+        border: 1px solid #ebebeb;
+        padding: 40px 60px; /* display:none; */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>안녕하세요:여성:내용 이에요</h1>
+    <div class="popup">
+      <h2>팝업이에요</h2>
+      <input type="checkbox" id="popup" />
+      <label for="popup">오늘하루안보기</label>
+      <button class="close">창닫기</button>
+    </div>
+    <script>
+      //변수생성
+      const myPop = document.querySelector(".popup"), //div 팝업
+        checkbox = document.querySelector("#popup"), // input #팝업버튼
+        close = document.querySelector(".close"); // button 창닫기
+      //방문여부 체크변수(css)
+
+      let visited = false;
+
+      function setCookie(name, value, day) {
+        let date = new Date();
+        date.setDate(date.getDate() + day);
+        let setCookie = "";
+        setCookie += name + "=" + value + ";";
+        setCookie += "Expires=" + date.toUTCString();
+        document.cookie = setCookie;
+      } //쿠키설정,생성
+
+      function delCookie(name) {
+        let date = new Date();
+        date.setDate(date.getDate() - 1);
+        let setCookie = "";
+        setCookie += name + "=popup01;";
+        setCookie += "Expires=" + date.toUTCString();
+        document.cookie = setCookie;
+      } //쿠키체크
+
+      function checkCookie(name) {
+        let cookies = document.cookie.split(";");
+
+        for (let i in cookies) {
+          if (cookies[i].indexOf(name) > -1) {
+            visited = true;
+          }
+        }
+        console.log(cookies, visited);
+        if (visited) {
+          myPop.style.display = "none";
+        } else {
+          myPop.style.display = "block";
+        }
+      } //브라우저에 저장된 여러개의 쿠키중에서 name 매개변수와 일치하는 값을 검색
+      checkCookie("cattalk");
+      close.addEventListener("click", function () {
+        if (checkbox.checked) {
+          //오늘하루안보기, 쿠키생성
+          //쿠키이름,쿠키값,파기일(유지기간)
+          setCookie("cattalk", "popup01", 1);
+          myPop.style.display = "none";
+        } else {
+          //팝업또띄움
+          myPop.style.display = "block";
+          delCookie("cattalk");
+        }
+      });
+      //delCookie(cattalk)
+    </script>
+  </body>
+</html>
