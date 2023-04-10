@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<!-- <script defer src="02.js"></script> -->
+		<style>
+			#sample {
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="img/sample.png" alt="sample image" id="sample" />
+		<script>
+			function movingImage(e, objToMove) {
+				objToMove.style.left = e.clientX - objToMove.width / 2 + "px";
+				objToMove.style.top = e.clientY - objToMove.height / 2 + "px";
+			}
+			window.onload = function () {
+				const sample = document.getElementById("sample");
+
+				sample.onmousedown = function () {
+					let self = this;
+					document.onmousemove = function (e) {
+						movingImage(e, self);
+					};
+				};
+
+				sample.onmouseup = function () {
+					document.onmousemove = null;
+				};
+
+				sample.ondragstart = function (e) {
+					e.preventDefault();
+				};
+			};
+		</script>
+	</body>
+</html>

@@ -1,0 +1,10 @@
+html,
+body {margin: 0; } 
+main {overflow-x: hidden;display: flex; } 
+section {min-width: 100vw;min-height: 100vh;display: flex;justify-content: center;align-items: center;font-size: 4em; } 
+section:nth-child(even) {background-color: teal;color: white; } 
+
+/* ver2-add */
+.vertical-section {height: 100vh;display: flex;align-items: center;justify-content: center; } 
+main {position: sticky;top: 0; } 
+section{min-width:50vw;}

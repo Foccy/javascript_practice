@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section id="title">
+    <div class="container">
+      <h1 class="animation1">JavaScript GSAP Library Animation</h1>
+      <p class="animation1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, dolore.</p>
+      <a class="animation1" href="#">Button</a>
+    </div>
+  </section>
+  <section id="thumbnail">
+    <img src="http://placekitten.com/200/300" >
+  </section>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js'></script>
+  <script>
+    let tl=gsap.timeline({defaults:{duration:1}});
+
+    tl.from('h1',{y:-50,opacity:0})
+      .from('p',{y:-50,opacity:0},'-=0.5')
+      .from('a',{y:-50,opacity:0},'+=1')
+      .from('img',{y:200,opacity:0},'-=0.5')
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			div#example {
+				width: 400px;
+				height: 200px;
+				padding: 20px;
+				margin: 50px auto;
+				background: purple;
+			}
+
+			body {
+				padding-bottom: 1000px;
+			}
+			p {
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div id="example"></div>
+		<div id="controls"></div>
+		<script>
+			function update() {
+				const container = document.getElementById("controls");
+				const elem = document.querySelector("div");
+				const rect = elem.getBoundingClientRect();
+				console.log(document.documentElement.clientHeight);
+				container.innerHTML = "";
+				for (let key in rect) {
+					if (typeof rect[key] !== "function") {
+						let para = document.createElement("p");
+						para.textContent = `${key} : ${rect[key]}`;
+						container.appendChild(para);
+					}
+				}
+			}
+
+			document.addEventListener("scroll", update);
+			update();
+		</script>
+	</body>
+</html>
