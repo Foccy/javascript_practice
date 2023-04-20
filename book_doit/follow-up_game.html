@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>끝말잇기</title>
+</head>
+<body>
+  <div><span id="order">1</span>번째 참가자</div>
+  <div>제시어:<span id="word"></span></div>
+  <input type="text">
+  <button >입력</button>
+  <script>
+
+
+    const number = Number(prompt('몇 명이 참가하나요?'));
+
+    const $button = document.querySelector('button')
+    const $input = document.querySelector('input')
+    const $word = document.querySelector('#word')
+    const $order = document.querySelector('#order');
+
+    let word; //제시어 (쓰인)
+    let newWorld // 현재 단어 (쓸)
+
+
+    const onClickBtn=()=>{
+      if (!word||word[word.length-1]===newWord[0]){ //제시어가 비어있는가? 
+        word=newWord; //true : 입력한 단어가 제시어가 된다.
+        $word.textContent=word; //화면에 제시어 표시
+        const order = Number($order.textContent);
+
+        if(order+1>number){
+          $order.textContent=1;
+        }else{
+          $order.textContent=order+1;
+        }
+      }else{//올바르지 않다
+          alert('올바르지않은 단어입니다!')
+      }
+          $input.value='';
+          $input.focus()
+    };
+  
+    const onInput=(e)=>{
+      newWord=e.target.value //입력한 단어를 현재 단어로
+    }
+    $button.addEventListener('click',onClickBtn)
+    $input.addEventListener('input',onInput)
+  </script>
+</body>
+</html>
