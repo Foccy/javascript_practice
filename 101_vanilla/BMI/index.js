@@ -1,6 +1,6 @@
 const form = document.querySelector('form')
 
-const calculate = (weight, height) => { /* bmi 계산함수 */
+const calculate = (weight, height) => { /* bmi 계산함수 1*/
     const put = weight *10000 / (height * height).toFixed(1)
     return Math.floor(put)
 }
