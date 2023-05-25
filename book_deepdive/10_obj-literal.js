@@ -31,6 +31,14 @@ var foo = {
 }
 console.log(foo);
 
+//--- 프로퍼티 갱신
+
+var plus = {
+  name : 'kim'
+}
+plus.name = 'lee'
+console.log(plus.name);//lee
+
 //--- 프로퍼티 추가
 
 var plus = {
@@ -58,3 +66,17 @@ var xy = {
   y : y
 }
 console.log(xy);
+
+let x= 1, y=1;
+const obj = {x,y}
+console.log(obj)// {x=1, y=1}
+
+//--- method
+var method = {
+  name : 'kim',
+
+  func : function(){
+    return this.name
+  }
+}
+console.log(method.func()); // 'kim'
