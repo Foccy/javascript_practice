@@ -57,5 +57,5 @@ console.log(copy === person); // true
 
 copy.name = 'kim'// 사본을 통해 객체 변경
 person.address = 'seoul' //원본을 통해 객체 변경
-console.log(copy.address);
+console.log(copy.address); // 원본을 바꾸면 사본도 변경, 가리키는 객체는 같다.
 console.log(person.name === copy.name); // true
