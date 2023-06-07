@@ -48,3 +48,24 @@ class UserStorage {
     }, 1000)
   }
 }
+
+const userStorage = new UserStorage();
+const id = prompt('enter your id')
+const password = prompt('enter your password')
+userStorage.loginUser(
+  id,
+  password,
+  user => {
+    userStorage.getRoles(user,userWithRole => 
+      {alert(`Hello ${userWithRole.name}, you have a ${userWithRole.role}`)}
+    ,(error) => {console.log(error);})
+  },
+  error => {console.log(error);}
+  );
+
+  //UserStorage 객체 안에 저장된 user id,pw가 없을 경우 loginUser 함수가 헛도는 콜백지옥이 생긴다
+  // 콜백 체인의 문제점은 가독성이 떨어져서 비즈니스 로직을 파악하기 힘듦 디버깅 유지보수 힘들어짐
+
+  //promise() 콜백을 쓰지않고 비동기 코드를 처리할 수 있게 해주는 함수
+  //정해진 장시간에 기능을 수행하고 나서 정상적으로 기능이 수행이 되어 졌다면 성공의 메시지와 함께 처리된 결과값 전달
+  //예상 못한 문제가 발생할 시, 에러를 전달해 준다 
